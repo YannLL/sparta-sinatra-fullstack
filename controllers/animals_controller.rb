@@ -15,7 +15,7 @@ class AnimalsController < Sinatra::Base
 
   # INDEX
   get "/" do
-
+    "works"
     @animals = Animal.all
 
     erb :'animals/index'
@@ -32,6 +32,9 @@ class AnimalsController < Sinatra::Base
   get "/:id" do
     id = params[:id].to_i
     "show animal #{ :id }"
+    # @animal.find id
+
+    erb :'animals/show'
 
   end
 

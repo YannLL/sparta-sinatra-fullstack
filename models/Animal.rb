@@ -1,8 +1,9 @@
-class Car
+class Animal
+
   attr_accessor :id, :name, :species
 
   def self.open_connection
-    conn = PG.connect( dbname: 'animal')
+    conn = PG.connect( dbname: 'animals')
   end
 
   def self.all
@@ -19,7 +20,7 @@ class Car
     end
 
     animals
-    
+
   end
 
   def self.hydrate animal
