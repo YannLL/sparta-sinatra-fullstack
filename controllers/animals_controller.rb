@@ -16,21 +16,26 @@ class AnimalsController < Sinatra::Base
   # INDEX
   get "/" do
 
-    "Index page"
+    # "Index page"
+
+    erb :'animals/index'
 
   end
 
   # NEW
   get "/new" do
-
+    @animal = Animal.all
     "new animal"
 
   end
 
   # SHOW
   get "/:id" do
+    params[:id].to_i
+    @animal = Animal.find id
+    # "show animal #{ :id }"
 
-    "show animal"
+    "#{:id}"
 
   end
 
@@ -43,22 +48,23 @@ class AnimalsController < Sinatra::Base
 
   # EDIT
   post "/:id/edit" do
+  params[:id].to_i
 
-  "Post page :)"
+  "Post page #{ :id }:)"
 
   end
 
   # UPDATE
   put "/:id" do
-
-    "Update :)"
+    params[:id].to_i
+    "Update #{:id}:)"
 
   end
 
   # DELETE
   delete "/:id" do
-
-  "delete"
+  params[:id].to_i
+  "delete #{:id}"
 
   end
 

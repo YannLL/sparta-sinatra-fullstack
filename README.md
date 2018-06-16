@@ -13,6 +13,7 @@
 
 * Create 7 RESTful routes and test them using sinatra/postman
 * Seed your file using `psql -d <DBNAME> -f seed.sql`
+
 * Start with READ
 * INDEX controller and Model methods (def self.all)
 * SHOW controller and Model methods (def self.find id)
