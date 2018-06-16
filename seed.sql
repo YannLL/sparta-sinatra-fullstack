@@ -1,6 +1,6 @@
-DROP TABLE IF EXISTS animal;
+DROP TABLE IF EXISTS animal_data;
 
-CREATE TABLE animal (
+CREATE TABLE animal_data (
 
   id SERIAL PRIMARY KEY,
   name VARCHAR(255),

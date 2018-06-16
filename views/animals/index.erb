@@ -1,26 +1,8 @@
 <h1>Welcome to Animals</h1>
 
-<table>
-  <thead>
-    <th>MAKE</th>
-    <th>MODEL</th>
-    <th>YEAR</th>
-    <th colspan='2'></th>
-  </thead>
-  <tbody>
-    <% @animals.each do |car| %>
-      <tr>
-        <td><%= animal.id %></td>
-        <td><%= animal.name %></td>
-        <td><%= animal.species %></td>
-        <td><a href="/<%= animal.id %>">See more</a></td>
-        <td>
-          <form class="" action="/<%= animal.id %>" method="post">
-            <input type="submit" name="" value="Delete">
-            <input type="hidden" name="_method" value="DELETE">
-          </form>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<% @animals.each do |animal| %>
+<div>
+  <h3><a href="/<%= animal.id %>"><%= animal.name %></a></h3>
+  <p><%= animal.species %></p>
+</div>
+<% end %>

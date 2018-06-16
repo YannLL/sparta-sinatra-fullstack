@@ -31,8 +31,8 @@ class AnimalsController < Sinatra::Base
   # SHOW
   get "/:id" do
     id = params[:id].to_i
-    "show animal #{id }"
-    # @animal.find id
+    
+    @animal = Animal.find id
 
     erb :'animals/show'
 
@@ -48,7 +48,7 @@ class AnimalsController < Sinatra::Base
   # EDIT
   post "/:id/edit" do
     id = params[:id].to_i
-    "Post page #{ id }:)"
+    "Post page #{id}:)"
 
   end
 
