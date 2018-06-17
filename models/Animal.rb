@@ -3,7 +3,7 @@ class Animal
   attr_accessor :id, :name, :species
 
   def self.open_connection
-    conn = PG.connect( dbname: 'animal')
+    conn = PG.connect( dbname: 'animal' )
   end
 
   def self.all
@@ -22,6 +22,21 @@ class Animal
     animals
 
   end
+
+  def save
+    conn = Animal.open_connection
+
+    if(!self.id)
+      sql = "INSERT INTO animal_data (name,species) VALUES ('#{self.name}','#{self.species}')"
+
+    else
+      sql = "UPDATE animal_data SET name='#{self.name}',species='#{self.species}' WHERE id='#{self.id}'"
+    end
+
+    conn.exec(sql)
+
+  end
+
 
   def self.find id
 

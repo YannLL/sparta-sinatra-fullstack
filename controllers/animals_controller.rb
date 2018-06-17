@@ -24,14 +24,19 @@ class AnimalsController < Sinatra::Base
 
   # NEW
   get "/new" do
+
+    # @animal = Animal.new
+
     "new"
+
+    erb :'animals/new'
 
   end
 
   # SHOW
   get "/:id" do
     id = params[:id].to_i
-    
+
     @animal = Animal.find id
 
     erb :'animals/show'
@@ -41,7 +46,7 @@ class AnimalsController < Sinatra::Base
   # CREATE
   post "/" do
 
-    "CREATE POST :)"
+    "post animal :)"
 
   end
 
